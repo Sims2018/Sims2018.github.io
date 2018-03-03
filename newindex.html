@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<!--<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />-->
+<!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="css/font-awesome.css" rel="stylesheet"> 
+<script src="js/jquery.min.js"> </script>
+<script src="js/bootstrap.min.js"> </script>
+
+<!-- Mainly scripts -->
+<script src="js/jquery.metisMenu.js"></script>
+<script src="js/jquery.slimscroll.min.js"></script>
+<!-- Custom and plugin javascript -->
+<link href="css/custom.css" rel="stylesheet">
+<script src="js/custom.js"></script>
+<script src="js/screenfull.js"></script>
+
+		<script>
+		$(function () {
+			$('#supported').text('Supported/allowed: ' + !!screenfull.enabled);
+
+			if (!screenfull.enabled) {
+				return false;
+			}
+
+			
+
+			$('#toggle').click(function () {
+				screenfull.toggle($('#container')[0]);
+			});
+			
+
+			
+		});
+		</script>
+
+<style>
+body  {
+    background-image: url("sportsgreen.jpg");
+    background-color: #cccccc;
+	 background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+	background-size: 100%;
+	
+}
+</style>
+
+</head>
+<body>
+<body>
+
+<dialog id="loginDialog" class="mdl-dialog">
+    <h4 class="mdl-dialog__title">Admin Sign in</h4>
+    <div class="mdl-dialog__content">
+<p id= "loginError"></p>
+
+     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+	  <label class="mdl-textfield__label" for="sample3">E-mail</label>
+  &nbsp &nbsp &nbsp   <input class="mdl-textfield__input" type="text" id="loginEmail">
+   
+  </div>
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+<label class="mdl-textfield__label" for="sample3">Password</label>
+    <input class="mdl-textfield__input" input type="password" type="text" id="loginPassword">
+    
+  </div>
+    </div>
+    <button id = "loginBtn" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+  Log in
+</button>
+  </dialog>
+  
+  <div class = "login-cover" id="cover">
+
+</div>
+&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp<a href= ""id="signout"><i class="fa fa-clipboard"></i>Sign Out</a>
+<div class="col-md-3 ">
+				
+				<div class="content-top-1">
+				<div class="col-md-19 top-content">
+					<h5>Team A</h5>
+					<label id="teamA" name="teamA">0</label>
+				</div>
+				
+				 <div class="clearfix"> </div>
+				</div>
+				
+				<div class="content-top-1">
+				<div class="col-md-19 top-content">
+					<h5>Team B</h5>
+					<label id="teamB" name="teamB">0</label>
+				</div>
+				
+				 <div class="clearfix"> </div>
+				</div>
+				<div class="content-top-1">
+				<div class="col-md-19 top-content">
+					<h5>Total Games</h5>
+					<label id="totalGames" name="totalGames">0</label>
+				</div>
+				<div class="col-md-19 top-content1">	   
+					<div id="demo-pie-3" class="pie-title-center" data-percent="0"> <span class="pie-value"></span> </div>
+				</div>
+				 <div class="clearfix"> </div>
+				</div>
+			</div>
+		
+			
+	
+		<div class="clearfix"> </div>
+		</div>
+     </div>
+	 	</div>
+
+
+<link rel="stylesheet" href="css/swipebox.css">
+	<script src="js/jquery.swipebox.min.js"></script> 
+	    <script type="text/javascript">
+			jQuery(function($) {
+				$(".swipebox").swipebox();
+			});
+</script>
+<!--scrolling js-->
+	<script src="js/jquery.nicescroll.js"></script>
+	<script src="js/scripts.js"></script>
+	<!--//scrolling js-->
+	<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+<script src="js/firebaseconnect.js">
+
+</script>
+  <script src="js/dashboard.js"></script>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Loyalty Day Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Minimal Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="css/font-awesome.css" rel="stylesheet"> 
+<script src="js/jquery.min.js"> </script>
+<script src="js/Chart.js"></script>
+
+
+<style>
+body  {
+    background-image: url("sportsgreen.jpg");
+    background-color: #cccccc;
+	 background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+	background-size: 100%;
+	
+}
+</style>
+</head>
+<body>
+<body>
+&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp<a href= ""id="signout"><i class="fa fa-clipboard"></i>Sign Out</a>
+<dialog id="loginDialog" class="mdl-dialog">
+    <h4 class="mdl-dialog__title">Admin Sign in</h4>
+    <div class="mdl-dialog__content">
+<p id= "loginError"></p>
+
+     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+	  <label class="mdl-textfield__label" for="sample3">E-mail</label>
+  &nbsp &nbsp &nbsp   <input class="mdl-textfield__input" type="text" id="loginEmail">
+   
+  </div>
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+<label class="mdl-textfield__label" for="sample3">Password</label>
+    <input class="mdl-textfield__input" input type="password" type="text" id="loginPassword">
+    
+  </div>
+    </div>
+    <button id = "loginBtn" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+  Log in
+</button>
+  </dialog>
+  
+  <div class = "login-cover" id="cover">
+
+</div>
+
+<center><b> <p style="background-color:yellow" ><font color="black"><font size="10">Update / Delete Games</p></font></b></center>
+<h1 name="testes" id="testes"> <font color="black"><font size="4"></h1>
+<br>	
+<div>
+<div class="container" >
+<div> <form  class= "select" id="form">
+							<br>
+    <center><b><font color="white">Game:</font></b>
+  <select  name="game"	 class="select" id="game"><br>
+  <option value="Basketball">Basketball</option>
+    <option value="Badminton">Badminton</option>
+    <option value="Athletics">Athletics</option>
+    <option value="Board Games">Board Games</option>
+	<option value="Volleyball">Volleyball</option>
+	<option value="Table Tennis">Table Tennis</option>
+	<option value="Lawn Tennis">Lawn Tennis</option>
+</select></center>
+<br><b><font color="white">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspDepartment:</font></b>
+					 <select id="department" name="department" class="select" ><br>
+  <option value="Elementary">Elementary</option>
+    <option value="Junior Highschool">Junior Highschool</option>
+    <option value="Senior Highschool">Senior Highschool</option>
+    <option value="College">College</option>	
+  </select> 
+
+<select name="gelem" id="gelem"> 
+    <option value="Kindergartner">Kindergartner</option>
+    <option value="Grade 1">Grade 1</option>
+    <option value="Grade 2">Grade 2</option>
+    <option value="Grade 3">Grade 3</option>
+    <option value="Grade 4">Grade 4</option>
+	<option value="Grade 5">Grade 5</option>
+	<option value="Grade 6">Grade 6</option>
+  </select>
+  
+  
+  <select name="gjunior" id="gjunior"> 
+   
+    <option value="Grade 7">Grade 7</option>
+    <option value="Grade 8">Grade 8</option>
+    <option value="Grade 9">Grade 9</option>
+    <option value="Grade 10">Grade 10</option>
+	
+  </select>
+  <select name="gsenior" id="gsenior"> 
+       
+  <option value="Grade 11">Grade 11</option>
+   <option value="Grade 12">Grade 12</option>
+   </select>
+</div>
+
+<br><b><font color="white">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspGender:</font></b>
+<select name="gender" id="gender">
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+  </select><br>
+ <br><b><font color="white">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspDetails:</font></b>
+  <select  name="badselect" class="select" id="badselect"><br>
+  <option value="single">Single</option>
+    <option value="double">Double</option>
+    <option value="mixed">Mixed</option>
+    
+  </select>
+
+  <select  name="athletics1" class="select" id="athletics1"><br>
+  <option value="100m Dash">100m Dash</option>
+    <option value="200m Dash">200m Dash</option>
+    <option value="300m Dash">300m Dash</option>
+    <option value="400m Dash">400m Dash</option>
+	<option value="500m Dash">500m Dash</option>
+	<option value="4 by 100m">4 by 100m</option>
+	<option value="4 by 200m">4 by 200m</option>
+	<option value="4 by 300m">4 by 300m</option>
+	<option value="4 by 400m">4 by 400m</option>
+	<option value="Shot Put">Shot Put</option>
+	<option value="Disc Cuss Throw">Disc Cuss Throw</option>
+	<option value="Javelin Throw">Javelin Throw</option>
+	<option value="Triple Jump">Triple Jump</option>
+	<option value="High Jump">High Jump</option>
+	<option value="Long Jump">Long Jump</option>
+	
+	
+  </select>
+  <br>
+
+ <center> <select  name="boardGames" class="select" id="boardGames"><br>
+  <option value="Chess">Chess</option>
+    <option value="Games of General">Games of General</option>
+    <option value="Snake and Ladder">Snakes and Ladder</option>
+    <option value="Word Factory">Word Factory</option>
+	<option value="Chinese Checkers">Chinese Checkers</option>
+	<option value="Scrabble">Scrabble</option>
+  </select></center>
+  </form>
+  <br>
+ <center> <input type="button" onClick="goD()" value = "Search" name="goD" id="goD"/></center>
+  </div>
+<center><h2 id ="warning"><font color="red">Found No Games.</font></h2></center>
+ <br></br><center> <label id="label">
+	<font color="white"> Venue:<br></font>
+  <input type="text" name="venue" class="select" id="venue"><br>
+  
+  <br><font color="white">Schedule:<br></font>
+   
+  <input type="date" name="sched"  id="sched" class="select"> <input type="time" name="time"  id="time" class="select"><br><br>
+  <br>
+<font color="white"><font size="5"> Points:<br></font></font>
+ <br> <font color="white"> Win:<br></font>
+  <input type="number" name="winp" class="select" id="winp"><br>
+  <br><font color="white">  Lose:<br></font>
+  <input type="number" name="losep" class="select" id="losep"><br>
+ 
+  <br>
+  <label id = "offi">
+ <font color="white"><center> Official:<br></center></font>
+<select id="options" name="options">
+
+</select>
+ </label>
+		</center>					  
+							   
+							   
+							  
+							   </div>
+
+
+
+							  
+			<br>
+			<br>
+<center><button id="UpGame" class="btn btn-action"> Update
+
+</button> .
+<button id="DelGame" class="btn btn-action"> Delete				   
+</center></div>
+</button>
+<br>
+<br>
+
+
+
+
+
+
+              
+<link rel="stylesheet" href="css/swipebox.css">
+	<script src="js/jquery.swipebox.min.js"></script> 
+	    <script type="text/javascript">
+			jQuery(function($) {
+				$(".swipebox").swipebox();
+			});
+</script>
+
+<!--scrolling js-->
+	<script src="js/jquery.nicescroll.js"></script>
+	<script src="js/scripts.js"></script>
+	<!--//scrolling js-->
+	<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+<script src="js/firebaseconnect.js">
+
+</script>
+
+
+<script src="js/udGames.js"> </script>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+var counter = 1;
+function show(){
+var rootRef = firebase.database().ref().child("Elementary");
+
+rootRef.on("child_added", snap => {
+  var details = snap.child("Details").val();
+  var game = snap.child("Game").val();
+  var gender = snap.child("Gender").val();
+   var sched = snap.child("Schedule").val();
+   var venue = snap.child("Venue").val();
+
+
+
+
+var btn = document.createElement("button");
+
+
+var insideTxt= document.createTextNode("Pick Game");
+btn.appendChild(insideTxt);
+btn.setAttribute('type', 'button');
+
+	btn.setAttribute("id","butt"+counter++);
+   
+   $("#displaye").append("<br>"+"Elementary Games: "+"<br>"+"Details: "+details+"<br>"+"Game: "+ game+"<br>" +"Gender: "+gender+"<br>"+"Sched: "+sched+"<br>"+"Venue: "+venue+"<br>");
+    $("#displaye").append(btn);
+
+
+});
+
+}
+
+   $('#displaye').on('click', '#butt1', function(){
+	
+	var firebaseHeadingRef = firebase.database().ref().child("Elementary");
+firebaseHeadingRef.once('value', function(datasnapshot){
+var y = datasnapshot.val();
+	
+	   
+	document.getElementById("fuck").innerHTML=y;
+
+});
+});
+$('#displaye').on('click', '#butt2', function(){
+    alert("FUKCKCKK2");
+});
+$('#displaye').on('click', '#butt3', function(){
+    alert("FUKCKCKK3");
+});
+
+
+function show(){
+
+database = firebase.database();
+
+var ref = database.ref('Elementary');
+ref.on ('value' , gotData, errData);
+
+}
+
+
+function gotData(data){
+//console.log(data.val());
+var scores = data.val();
+var keys = Object.keys(scores);
+console.log(keys);
+for (var i = 0; i< keys.length; i++) {
+var k = keys[i];
+var game = scores[k].Game ; 
+var gender = scores [k].Gender;
+var 
+console.log (game, gender);
+	
+}	
+}
+function errData(err){
+console.log('Error!');
+console.log (err);
+	
+	
+}
