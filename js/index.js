@@ -13,7 +13,8 @@ $("#gelem").show();
 $("#gjunior").hide();
 $("#gsenior").hide();
 $("#offi").hide();
-
+	
+	
 	var x=document.getElementById("form");
 
 	function onLoadFunctions() {
@@ -152,7 +153,7 @@ function confirmData(){
 	var x=document.getElementById("form");
 
 
-
+var firebaseRef = firebase.database().ref();
 var database = firebase.database();
 
 var v1 = x.elements["depart"].value;
@@ -174,9 +175,9 @@ var Oname = document.getElementById("options").value;
 var accName = Oname.toString();
 
 if(v1=="Elementary"){
-	var firebaseRef = firebase.database().ref();
-	var firebaseHeadingRef = firebase.database().ref().child("TotalGamesE:");
-firebaseHeadingRef.once('value', function(datasnapshot){
+
+	var firebaseElem = firebase.database().ref().child("TotalGamesE:");
+firebaseElem.once('value', function(datasnapshot){
 var y = datasnapshot.val();
 var a = parseInt(y)	;
 
@@ -231,7 +232,7 @@ Department: v1,
 
 }	
 refs.set(data); 
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1+'/'+v5);
+var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1);
 var data= {
 	Official: accName,
 	Game: v3,
@@ -292,7 +293,7 @@ Department: v1,
 }	
 refs.set(data);
 
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x2+'/'+v5);
+var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x2);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -352,7 +353,7 @@ Department: v1,
 
 }	
 refs.set(data);
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x3+'/'+v5);
+var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x3);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -414,7 +415,7 @@ Department: v1,
 }	
 refs.set(data);
  
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+v5);
+var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2);
 var data= {
 		Official: accName,
 		Game: v3,
@@ -470,7 +471,7 @@ Department: v1,
 
 }	
 refs.set(data);
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+v5);
+var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -530,7 +531,7 @@ Department: v1,
 }	
 refs.set(data);
  
-var time = database.ref("Schedule/"+'/'+v1+'/'+grE+'/'+v2+'/'+x1+'/'+v5);
+var time = database.ref("Schedule/"+'/'+v1+'/'+grE+'/'+v2+'/'+x1);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -590,7 +591,7 @@ Department: v1,
 
 }	
 refs.set(data);
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1+'/'+v5);
+var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -611,9 +612,9 @@ time.set(data);
 	
 }
 else if(v1=="Junior Highschool"){
-	var firebaseRef = firebase.database().ref();
-	var firebaseHeadingRef = firebase.database().ref().child("TotalGamesJ:");
-firebaseHeadingRef.once('value', function(datasnapshot){
+	
+	var firebaseJS = firebase.database().ref().child("TotalGamesJ:");
+firebaseJS.once('value', function(datasnapshot){
 var y = datasnapshot.val();
 var a = parseInt(y)	;
 
@@ -1028,9 +1029,9 @@ time.set(data);
 }	
 	
 else if(v1=="Senior Highschool"){
-	var firebaseRef = firebase.database().ref();
-	var firebaseHeadingRef = firebase.database().ref().child("TotalGamesS:");
-firebaseHeadingRef.once('value', function(datasnapshot){
+	
+	var firebaseSH = firebase.database().ref().child("TotalGamesS:");
+firebaseSH.once('value', function(datasnapshot){
 var y = datasnapshot.val();
 var a = parseInt(y)	;
 
@@ -1141,7 +1142,7 @@ Department: v1,
 }	
 refs.set(data);
 
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x2+'/'+v5);
+var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x2);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -1255,7 +1256,7 @@ Department: v1,
 }	
 refs.set(data);
   
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+v5);
+var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -1311,7 +1312,7 @@ Department: v1,
   Details : "None"
 }	
 refs.set(data); 
-	var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+v5);
+	var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -1368,7 +1369,7 @@ Department: v1,
 }	
 refs.set(data);
  
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1+'/'+v5);
+var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -1426,7 +1427,7 @@ Department: v1,
   Details : x1
 }	
 refs.set(data); 
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1+'/'+v5);
+var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -1446,9 +1447,9 @@ time.set(data);
 	}   
   
 else if(v1=="College"){
-	var firebaseRef = firebase.database().ref();
-	var firebaseHeadingRef = firebase.database().ref().child("TotalGamesC:");
-firebaseHeadingRef.once('value', function(datasnapshot){
+
+	var firebaseColl = firebase.database().ref().child("TotalGamesC:");
+firebaseColl.once('value', function(datasnapshot){
 var y = datasnapshot.val();
 var a = parseInt(y)	;
 
@@ -1500,7 +1501,7 @@ Department: v1,
   Details : x1
 }	
 refs.set(data); 
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+v2+'/'+x1+'/'+v5);
+var time = database.ref("Schedule/"+v3+'/'+v1+'/'+v2+'/'+x1);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -1556,7 +1557,7 @@ Department: v1,
   Details : x2
 }	
 refs.set(data);
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+v2+'/'+x2+'/'+v5);
+var time = database.ref("Schedule/"+v3+'/'+v1+'/'+v2+'/'+x2);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -1611,7 +1612,7 @@ Department: v1,
 }	
 refs.set(data); 
 
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+v2+'/'+x3+'/'+accName);
+var time = database.ref("Schedule/"+v3+'/'+v1+'/'+v2+'/'+x3);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -1669,7 +1670,7 @@ Department: v1,
 }	
 refs.set(data);
 
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+v2+'/'+v5);
+var time = database.ref("Schedule/"+v3+'/'+v1+'/'+v2);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -1726,7 +1727,7 @@ Department: v1,
 }	
 refs.set(data);
  
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+v2+'/'+v5);
+var time = database.ref("Schedule/"+v3+'/'+v1+'/'+v2);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -1783,7 +1784,7 @@ var data= {
   Details : x1
 }	
 refs.set(data); 
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+v2+'/'+x1+'/'+v5);
+var time = database.ref("Schedule/"+v3+'/'+v1+'/'+v2+'/'+x1);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -1845,7 +1846,7 @@ Official: accName,
  
 }	
 refs.set(data);
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+v2+'/'+x1+'/'+accName);
+var time = database.ref("Schedule/"+v3+'/'+v1+'/'+v2+'/'+x1);
 var data= {
 Official: accName,
 	Game: v3,

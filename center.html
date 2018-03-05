@@ -25,7 +25,25 @@ div.b {
 }
 </style>
 <body>
+<dialog id="loginDialog" class="mdl-dialog">
+    <h4 class="mdl-dialog__title">Admin Sign in</h4>
+    <div class="mdl-dialog__content">
+<p id= "loginError"></p>
 
+     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="loginEmail">
+    <label class="mdl-textfield__label" for="sample3">E-mail</label>
+  </div>
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" input type="password" type="text" id="loginPassword">
+    <label class="mdl-textfield__label" for="sample3">Password</label>
+  </div>
+    </div>
+    <button id = "loginBtn" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+  Log in
+</button>
+<div id= "loginProgress" class="mdl-spinner mdl-js-spinner is-active"></div>
+  </dialog>
 <center>
 <font color="white"><div class="a">WELCOME</div><br><br>
 <i><font color="white"><div class="b">"You can't be the strongest</div>
