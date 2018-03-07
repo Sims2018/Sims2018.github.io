@@ -170,6 +170,9 @@ var v1 = x.elements["depart"].value;
 	var grE=x.elements["gelem"].value;
 	var grJ=x.elements["gjunior"].value;
 	var grS=x.elements["gsenior"].value;
+	 var vteamA = document.getElementById("pteamA").value
+ var vteamB = document.getElementById("pteamB").value
+ 
 var Oname = document.getElementById("options").value;
 	
 var accName = Oname.toString();
@@ -216,23 +219,16 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
+ 
 }	
 ref.set(data); 
 
  
-var refs = database.ref("Players/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1);
-var data= {
-	Official: accName,
-	Game: v3,
-Department: v1,
-   Grade : grE,
-  Gender : v2,
-  Details : x1
-
-}	
-refs.set(data); 
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1);
+ 
+var time = database.ref("Event/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1);
 var data= {
 	Official: accName,
 	Game: v3,
@@ -241,7 +237,9 @@ Department: v1,
   Gender : v2,
   Details : x1,
 	Day: v5,
-	Time: v6
+	Time: v6,
+	TeamA: vteamA,
+	TeamB: vteamB,
 	
 
 }	
@@ -277,23 +275,15 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 ref.set(data); 
 
-	var refs = database.ref("Players/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x2);
-var data= {
-	Official: accName,
-		Game: v3,
-Department: v1,
-   Grade : grE,
-  Gender : v2,
-  Details : x2
 
-}	
-refs.set(data);
 
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x2);
+var time = database.ref("Event/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x2);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -302,7 +292,9 @@ Department: v1,
   Gender : v2,
   Details : x2,
 	Day: v5,
-	Time: v6
+	Time: v6,
+		TeamA: vteamA,
+	TeamB: vteamB,
 	
 }	
 time.set(data);  
@@ -338,22 +330,14 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 ref.set(data); 
 
-var refs = database.ref("Players/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x3);
-var data= {
-	Official: accName,
-		Game: v3,
-Department: v1,
-   Grade : grE,
-  Gender : v2,
-  Details : x3
 
-}	
-refs.set(data);
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x3);
+var time = database.ref("Event/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x3);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -362,7 +346,9 @@ Department: v1,
   Gender : v2,
   Details : x3,
 	Day: v5,
-	Time: v6
+	Time: v6,
+		TeamA: vteamA,
+	TeamB: vteamB,
 	
 
 }	
@@ -399,23 +385,13 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 ref.set(data); 
 
-	var refs = database.ref("Players/"+v3+'/'+v1+'/'+grE+'/'+v2);
-var data= {
-	Official: accName,
-		Game: v3,
-Department: v1,
-   Grade : grE,
-  Gender : v2,
-  Details : "None"
-
-}	
-refs.set(data);
- 
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2);
+var time = database.ref("Event/"+v3+'/'+v1+'/'+grE+'/'+v2);
 var data= {
 		Official: accName,
 		Game: v3,
@@ -424,8 +400,9 @@ Department: v1,
   Gender : v2,
   Details : "None",
 	Day: v5,
-	Time: v6
-	
+	Time: v6,
+	TeamA: vteamA,
+	TeamB: vteamB,
 
 }	
 time.set(data);
@@ -457,21 +434,14 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 ref.set(data); 
 
-		var refs = database.ref("Players/"+v3+'/'+v1+'/'+grE+'/'+v2);
-var data= {
-	Official: accName,
-		Game: v3,
-Department: v1,
-   Grade : grE,
-  Gender : v2
 
-}	
-refs.set(data);
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2);
+var time = database.ref("Event/"+v3+'/'+v1+'/'+grE+'/'+v2);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -479,8 +449,9 @@ Department: v1,
    Grade : grE,
   Gender : v2,
 	Day: v5,
-	Time: v6
-	
+	Time: v6,
+		TeamA: vteamA,
+	TeamB: vteamB
 
 }	
 time.set(data); 
@@ -515,23 +486,14 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 ref.set(data); 
 
-var refs = database.ref("Players/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1);
-var data= {
-	Official: accName,
-		Game: v3,
-Department: v1,
-   Grade : grE,
-  Gender : v2,
-  Details : x1
 
-}	
-refs.set(data);
- 
-var time = database.ref("Schedule/"+'/'+v1+'/'+grE+'/'+v2+'/'+x1);
+var time = database.ref("Event/"+'/'+v1+'/'+grE+'/'+v2+'/'+x1);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -540,8 +502,9 @@ Department: v1,
   Gender : v2,
   Details : x1,
 	Day: v5,
-	Time: v6
-	
+	Time: v6,
+		TeamA: vteamA,
+	TeamB: vteamB,
 
 }	
 time.set(data);
@@ -576,22 +539,14 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 ref.set(data); 
 
-var refs = database.ref("Players/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1);
-var data= {
-	Official: accName,
-		Game: v3,
-Department: v1,
-   Grade : grE,
-  Gender : v2,
-  Details : x1
 
-}	
-refs.set(data);
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1);
+var time = database.ref("Event/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -600,8 +555,9 @@ Department: v1,
   Gender : v2,
   Details : x1,
 	Day: v5,
-	Time: v6
-	
+	Time: v6,
+		TeamA: vteamA,
+	TeamB: vteamB,
 
 }	
 time.set(data); 
@@ -652,23 +608,15 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 ref.set(data); 
 
 
-		var refs = database.ref("Players/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1);
-var data= {
-	Official: accName,
-		Game: v3,
-Department: v1,
-   Grade : grJ,
-  Gender : v2,
-  Details : x1
-}	
-refs.set(data); 
 
-	var time = database.ref('Schedule/'+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1+'/'+v5);
+	var time = database.ref('Event/'+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -677,7 +625,9 @@ Department: v1,
   Gender : v2,
   Details : x1,
    Day: v5,
- Time: v6
+ Time: v6,
+ 	TeamA: vteamA,
+	TeamB: vteamB,
 }	
 time.set(data);
   }
@@ -708,22 +658,15 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 ref.set(data); 
 
 
-		var refs = database.ref("Players/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x2);
-var data= {
-	Official: accName,
-		Game: v3,
-Department: v1,
-   Grade : grJ,
-  Gender : v2,
-  Details : x2
-}	
-refs.set(data); 
-	var time = database.ref('Schedule/'+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x2+'/'+v5);
+
+	var time = database.ref('Event/'+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x2);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -732,7 +675,9 @@ Department: v1,
   Gender : v2,
   Details : x2,
    Day: v5,
- Time: v6
+ Time: v6,
+ 	TeamA: vteamA,
+	TeamB: vteamB,
   }
   time.set(data)
   }
@@ -766,21 +711,14 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 ref.set(data); 
 
-var refs = database.ref("Players/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x3);
-var data= {
-	Official: accName,
-		Game: v3,
-Department: v1,
-   Grade : grJ,
-  Gender : v2,
-  Details : x3
-}	
-refs.set(data);
-	var time = database.ref('Schedule/'+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x3+'/'+v5);
+
+	var time = database.ref('Event/'+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x3);
 var data= {
 		Official: accName,
 		Game: v3,
@@ -788,7 +726,11 @@ Department: v1,
    Grade : grJ,
   Gender : v2,
   Details : x3,
- Venue: v4
+ Venue: v4,
+ Day: v5,
+ Time: v6,
+ 	TeamA: vteamA,
+	TeamB: vteamB,
 }
 time.set(data);
   }
@@ -820,21 +762,14 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 ref.set(data);  
 
-	var refs = database.ref("Players/"+v3+'/'+v1+'/'+grJ+'/'+v2);
-var data= {
-	Official: accName,
-		Game: v3,
-Department: v1,
-   Grade : grJ,
-  Gender : v2,
-  Details : "None"
-}	
-refs.set(data);  
-var time = database.ref('Schedule/'+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+v5);
+ 
+var time = database.ref('Event/'+v3+'/'+v1+'/'+grJ+'/'+v2);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -844,7 +779,9 @@ Department: v1,
   Details : "None",
  Venue: v4, 
  Day: v5,
- Time: v6
+ Time: v6,
+ 	TeamA: vteamA,
+	TeamB: vteamB,
 }	
 time.set(data);  
   }
@@ -877,22 +814,15 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 ref.set(data); 
 
-	var refs = database.ref("Players/"+v3+'/'+v1+'/'+grJ+'/'+v2);
-var data= {
-	Official: accName,
-		Game: v3,
-Department: v1,
-   Grade : grJ,
-  Gender : v2,
-  Details : "None"
-}	
-refs.set(data); 
 
-var time = database.ref('Schedule/'+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+v5);
+
+var time = database.ref('Event/'+v3+'/'+v1+'/'+grJ+'/'+v2);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -902,7 +832,9 @@ Department: v1,
   Details : "None",
  Venue: v4, 
  Day: v5,
- Time: v6
+ Time: v6,
+ 	TeamA: vteamA,
+	TeamB: vteamB,
 }	
 time.set(data); 
 	
@@ -937,23 +869,16 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 ref.set(data);  
 
 
-		var refs = database.ref("Players/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1);
-var data= {
-	Official: accName,
-		Game: v3,
-Department: v1,
-   Grade : grJ,
-  Gender : v2,
-  Details : x1
-}	
-refs.set(data);  
+ 
 
-var time = database.ref('Schedule/'+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1+'/'+v5);
+var time = database.ref('Event/'+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -963,7 +888,9 @@ Department: v1,
   Details : x1,
  Venue: v4, 
  Day: v5,
- Time: v6
+ Time: v6,
+ 	TeamA: vteamA,
+	TeamB: vteamB,
 }	
 time.set(data); 
   }
@@ -996,21 +923,14 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 ref.set(data); 
 
-var refs = database.ref("Players/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1);
-var data= {
-	Official: accName,
-		Game: v3,
-Department: v1,
-   Grade : grJ,
-  Gender : v2,
-  Details : x1
-}	
-refs.set(data);
-var time = database.ref('Schedule/'+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1+'/'+v5);
+
+var time = database.ref('Event/'+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -1020,7 +940,9 @@ Department: v1,
   Details : x1,
  Venue: v4, 
  Day: v5,
- Time: v6
+ Time: v6,
+ 	TeamA: vteamA,
+	TeamB: vteamB,
 }	
 time.set(data);  
   }
@@ -1069,21 +991,16 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 ref.set(data); 
 
-		var refs = database.ref("Players/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1);
-var data= {
-	Official: accName,
-		Game: v3,
-Department: v1,
-   Grade : grS,
-  Gender : v2,
-  Details : x1
+
 }	
 refs.set(data); 
-var time = database.ref('Schedule/'+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1+'/'+v5);
+var time = database.ref('Event/'+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -1093,11 +1010,13 @@ Department: v1,
   Details : x1,
  Venue: v4, 
  Day: v5,
- Time: v6
+ Time: v6,
+ 	TeamA: vteamA,
+	TeamB: vteamB,
 }	
 time.set(data); 
 
-  }
+  
   });
 }	
 else if (v3=="Athletics"){
@@ -1127,22 +1046,15 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 ref.set(data); 
 
-	var refs = database.ref("Players/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x2);
-var data= {
-	Official: accName,
-		Game: v3,
-Department: v1,
-   Grade : grS,
-  Gender : v2,
-  Details : x2
-}	
-refs.set(data);
 
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x2);
+
+var time = database.ref("Event/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x2);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -1152,7 +1064,9 @@ Department: v1,
   Details : x2,
  Venue: v4, 
  Day: v5,
- Time: v6
+ Time: v6,
+ 	TeamA: vteamA,
+	TeamB: vteamB,
 }	
 time.set(data); 
   }
@@ -1185,21 +1099,14 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 ref.set(data); 
 
-	var refs = database.ref("Players/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x3);
-var data= {
-	Official: accName,
-		Game: v3,
-Department: v1,
-   Grade : grS,
-  Gender : v2,
-  Details : x3
-}	
-refs.set(data);
-var time = database.ref('Schedule/'+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x3+'/'+v5);
+
+var time = database.ref('Event/'+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x3);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -1209,7 +1116,9 @@ Department: v1,
   Details : x3,
  Venue: v4, 
  Day: v5,
- Time: v6
+ Time: v6,
+ 	TeamA: vteamA,
+	TeamB: vteamB,
 }	
 time.set(data);  
   }
@@ -1241,22 +1150,15 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 ref.set(data);  
 
-var refs = database.ref("Players/"+v3+'/'+v1+'/'+grS+'/'+v2);
-var data= {
-	Official: accName,
-		Game: v3,
-Department: v1,
-   Grade : grS,
-  Gender : v2,
-  Details : "None"
-}	
-refs.set(data);
+
   
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2);
+var time = database.ref("Event/"+v3+'/'+v1+'/'+grS+'/'+v2);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -1266,7 +1168,9 @@ Department: v1,
   Details : "None",
  Venue: v4, 
  Day: v5,
- Time: v6
+ Time: v6,
+ 	TeamA: vteamA,
+	TeamB: vteamB,
 }	
 time.set(data);
   }
@@ -1302,17 +1206,8 @@ Department: v1,
 }	
 ref.set(data); 
 
-	var refs = database.ref("Players/"+v3+'/'+v1+'/'+grS+'/'+v2);
-var data= {
-	Official: accName,
-		Game: v3,
-Department: v1,
-   Grade : grS,
-  Gender : v2,
-  Details : "None"
-}	
-refs.set(data); 
-	var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2);
+ 
+	var time = database.ref("Event/"+v3+'/'+v1+'/'+grS+'/'+v2);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -1322,7 +1217,9 @@ Department: v1,
   Details : "None",
  Venue: v4, 
  Day: v5,
- Time: v6
+ Time: v6,
+ 	TeamA: vteamA,
+	TeamB: vteamB,
 }	
 time.set(data); 
   }
@@ -1354,22 +1251,15 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 ref.set(data); 
 
-	var refs = database.ref("Players/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1);
-var data= {
-	Official: accName,
-		Game: v3,
-Department: v1,
-   Grade : grS,
-  Gender : v2,
-  Details : x1
-}	
-refs.set(data);
+
  
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1);
+var time = database.ref("Event/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -1379,7 +1269,9 @@ Department: v1,
   Details : x1,
  Venue: v4, 
  Day: v5,
- Time: v6
+ Time: v6,
+ 	TeamA: vteamA,
+	TeamB: vteamB,
 }	
 time.set(data); 
 
@@ -1413,21 +1305,14 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 ref.set(data); 
 
-	var refs = database.ref("Players/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1);
-var data= {
-	Official: accName,
-		Game: v3,
-Department: v1,
-   Grade : grS,
-  Gender : v2,
-  Details : x1
-}	
-refs.set(data); 
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1);
+
+var time = database.ref("Event/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -1437,7 +1322,9 @@ Department: v1,
   Details : x1,
  Venue: v4, 
  Day: v5,
- Time: v6
+ Time: v6,
+ 	TeamA: vteamA,
+	TeamB: vteamB,
 }	
 time.set(data); 
   }
@@ -1487,21 +1374,14 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 ref.set(data);  
 
-	var refs = database.ref("Players/"+v3+'/'+v1+'/'+v2+'/'+x1);
-var data= {
-	Official: accName,
-		Game: v3,
-Department: v1,
-   Grade : "None",
-  Gender : v2,
-  Details : x1
-}	
-refs.set(data); 
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+v2+'/'+x1);
+
+var time = database.ref("Event/"+v3+'/'+v1+'/'+v2+'/'+x1);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -1511,7 +1391,9 @@ Department: v1,
   Details : x1,
  Venue: v4, 
  Day: v5,
- Time: v6
+ Time: v6,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 time.set(data);   
   }
@@ -1543,21 +1425,13 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 ref.set(data); 
 
-var refs = database.ref("Players/"+v3+'/'+v1+'/'+v2+'/'+x2);
-var data= {
-	Official: accName,
-		Game: v3,
-Department: v1,
-   Grade : "None",
-  Gender : v2,
-  Details : x2
-}	
-refs.set(data);
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+v2+'/'+x2);
+var time = database.ref("Event/"+v3+'/'+v1+'/'+v2+'/'+x2);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -1567,7 +1441,9 @@ Department: v1,
   Details : x2,
  Venue: v4, 
  Day: v5,
- Time: v6
+ Time: v6,
+ TeamA: vteamA,
+TeamB: vteamB,
 }	
 time.set(data);  
   }
@@ -1597,22 +1473,13 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 ref.set(data); 
 
-var refs = database.ref("Players/"+v3+'/'+v1+'/'+v2+'/'+x3);
-var data= {
-	Official: accName,
-		Game: v3,
-Department: v1,
-   Grade : "None",
-  Gender : v2,
-  Details : x3
-}	
-refs.set(data); 
-
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+v2+'/'+x3);
+var time = database.ref("Event/"+v3+'/'+v1+'/'+v2+'/'+x3);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -1622,7 +1489,9 @@ Department: v1,
   Details : x3,
  Venue: v4, 
  Day: v5,
- Time: v6
+ Time: v6,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 time.set(data); 
 
@@ -1655,22 +1524,13 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 ref.set(data); 
 
-	var refs = database.ref("Players/"+v3+'/'+v1+'/'+v2);
-var data= {
-	Official: accName,
-		Game: v3,
-Department: v1,
-   Grade : "None",
-  Gender : v2,
-  Details : "None"
-}	
-refs.set(data);
-
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+v2);
+var time = database.ref("Event/"+v3+'/'+v1+'/'+v2);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -1680,7 +1540,9 @@ Department: v1,
   Details : "None",
  Venue: v4, 
  Day: v5,
- Time: v6
+ Time: v6,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 time.set(data); 
   }
@@ -1711,23 +1573,14 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 ref.set(data); 
 
 
-	var refs = database.ref("Players/"+v3+'/'+v1+'/'+v2);
-var data= {
-	Official: accName,
-		Game: v3,
-Department: v1,
-   Grade : "None",
-  Gender : v2,
-  Details : "None"
-}	
-refs.set(data);
- 
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+v2);
+var time = database.ref("Event/"+v3+'/'+v1+'/'+v2);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -1737,7 +1590,9 @@ Department: v1,
   Details : "None",
  Venue: v4, 
  Day: v5,
- Time: v6
+ Time: v6,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 time.set(data);
   }
@@ -1770,21 +1625,14 @@ var data= {
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
-refs.set(data); 
+ref.set(data); 
 
-var ref = database.ref("Players/"+v3+'/'+v1+'/'+v2+'/'+x1);
-var data= {
-	Official: accName,
-		Game: v3,
- Department: v1,
-   Grade : "None",
-  Gender : v2,
-  Details : x1
-}	
-refs.set(data); 
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+v2+'/'+x1);
+ 
+var time = database.ref("Event/"+v3+'/'+v1+'/'+v2+'/'+x1);
 var data= {
 	Official: accName,
 		Game: v3,
@@ -1794,7 +1642,9 @@ var data= {
   Details : x1,
  Venue: v4, 
  Day: v5,
- Time: v6
+ Time: v6,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 time.set(data); 
   }
@@ -1830,23 +1680,13 @@ Official: accName,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 ref.set(data); 
 
-var refs = database.ref("Players/"+v3+'/'+v1+'/'+v2+'/'+x1);
-var data= {
-Official: accName,
-	Game: v3,
-	Department: v1,
-   Grade : "None",
-  Gender : v2,
-  Details : x1,
- Lose: y2
- 
-}	
-refs.set(data);
-var time = database.ref("Schedule/"+v3+'/'+v1+'/'+v2+'/'+x1);
+var time = database.ref("Event/"+v3+'/'+v1+'/'+v2+'/'+x1);
 var data= {
 Official: accName,
 	Game: v3,
@@ -1856,7 +1696,9 @@ Official: accName,
   Details : x1,
  Venue: v4, 
  Day: v5,
- Time: v6
+ Time: v6,
+ TeamA: vteamA,
+	TeamB: vteamB,
 }	
 time.set(data); 
   }
@@ -1876,7 +1718,7 @@ var ans=a+1;
 
 var n = ans.toString();
 
-firebaseRef.child("TotalGames:").set(n);
+firebaseRef.child("TotalNumberOfGames:").set(n);
 
 });
 $("#ddata").show();

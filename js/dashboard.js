@@ -2,6 +2,9 @@
 var score1=document.getElementById("teamA");
 var score2=document.getElementById("teamB");
 var tots = document.getElementById("totalGames");
+var A = document.getElementById("Aname");
+var B = document.getElementById("Bname");
+var Games = document.getElementById("Games");
 var database = firebase.database();
 function onLoadFunctions() {
 	
@@ -117,5 +120,20 @@ score2.innerHTML = datasnapshot.val();
 var firebaseHeadingRef = firebase.database().ref().child("TotalGames:");
 firebaseHeadingRef.on('value', function(datasnapshot){
 tots.innerHTML = datasnapshot.val();
+
+});
+var firebaseHeadingRef = firebase.database().ref().child("TeamName/Name_A");
+firebaseHeadingRef.on('value', function(datasnapshot){
+A.innerHTML = datasnapshot.val();
+
+});
+var firebaseHeadingRef = firebase.database().ref().child("TeamName/Name_B");
+firebaseHeadingRef.on('value', function(datasnapshot){
+B.innerHTML = datasnapshot.val();
+
+});
+var firebaseHeadingRef = firebase.database().ref().child("GamesPlayed:");
+firebaseHeadingRef.on('value', function(datasnapshot){
+Games.innerHTML = datasnapshot.val();
 
 });

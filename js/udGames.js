@@ -150,14 +150,15 @@ function goD(){
 	
 
  
-  
+  	 var vteamA = document.getElementById("pteamA").value
+ var vteamB = document.getElementById("pteamB").value
   
   
 
 if(depav=="Elementary"){
 if (gamev=="Badminton"){
 
-var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+gradevsE+'/'+genderv+'/'+detailv1);
+var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+gradevsE+'/'+genderv+'/'+detailv1);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -192,21 +193,25 @@ $("#DelGame").show();
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
 
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
+			   
 	   
 	   });
   }
 });
 }
 else if (gamev=="Athletics"){
-var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+gradevsE+'/'+genderv+'/'+detailv2);
+var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+gradevsE+'/'+genderv+'/'+detailv2);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -233,7 +238,11 @@ firebaseHeadingRefs.on('value', function(datasnapshot){
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -246,14 +255,14 @@ firebaseHeadingRefs.on('value', function(datasnapshot){
 });
 }
 else if (gamev=="Board Games"){
-var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+gradevsE+'/'+genderv+'/'+detailv3);
+
+var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+gradevsE+'/'+genderv+'/'+detailv3);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
   var  official= datasnapshot.child("Official").val();
    
-	    
-    
+
   
   if (official == null)
   {
@@ -276,7 +285,11 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -292,7 +305,7 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 	
 else if (gamev=="Basketball"){
 
-		var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+gradevsE+'/'+genderv);
+		var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+gradevsE+'/'+genderv);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -318,7 +331,11 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -334,7 +351,7 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 }
 else if (gamev=="Volleyball"){
 	
-		var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+gradevsE+'/'+genderv);
+		var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+gradevsE+'/'+genderv);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -360,7 +377,11 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -376,9 +397,8 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 }
 
 else if(gamev=="Lawn Tennis") {
-var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+gradevsE+'/'+genderv+'/'+detailv1);
 
-var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+gradevsE+'/'+genderv+'/'+detailv1);
+var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+gradevsE+'/'+genderv+'/'+detailv1);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -410,7 +430,11 @@ $("#DelGame").show();
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -427,7 +451,7 @@ else if(gamev=="Table Tennis"){
 
 
 
-var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+gradevsE+'/'+genderv+'/'+detailv1);
+var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+gradevsE+'/'+genderv+'/'+detailv1);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -459,7 +483,11 @@ $("#DelGame").show();
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -477,7 +505,7 @@ $("#DelGame").show();
 else if(depav=="Junior Highschool"){
 if (gamev=="Badminton"){
 
-var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+gradevsJ+'/'+genderv+'/'+detailv1);
+var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+gradevsJ+'/'+genderv+'/'+detailv1);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -509,7 +537,11 @@ $("#DelGame").show();
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -523,7 +555,7 @@ $("#DelGame").show();
 });
 }	
 else if (gamev=="Athletics"){
-var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+gradevsJ+'/'+genderv+'/'+detailv2);
+var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+gradevsJ+'/'+genderv+'/'+detailv2);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -555,7 +587,11 @@ $("#DelGame").show();
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -570,7 +606,7 @@ $("#DelGame").show();
 
 }
 else if (gamev=="Board Games"){
-	var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+gradevsJ+'/'+genderv+'/'+detailv3);
+	var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+gradevsJ+'/'+genderv+'/'+detailv3);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -602,7 +638,11 @@ $("#DelGame").show();
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -618,7 +658,7 @@ $("#DelGame").show();
 }
 else if (gamev=="Basketball"){
 
-	var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+gradevsJ+'/'+genderv);
+	var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+gradevsJ+'/'+genderv);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -644,7 +684,11 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -659,7 +703,7 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 });
 }
 else if (gamev=="Volleyball"){
-	var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+gradevsJ+'/'+genderv);
+	var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+gradevsJ+'/'+genderv);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -685,7 +729,11 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -701,7 +749,7 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 }
 
 else if(gamev=="Lawn Tennis") {
-var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+gradevsJ+'/'+genderv+'/'+detailv1);
+var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+gradevsJ+'/'+genderv+'/'+detailv1);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -733,7 +781,11 @@ $("#DelGame").show();
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -748,7 +800,7 @@ $("#DelGame").show();
   
 }
 else if(gamev=="Table Tennis"){
-var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+gradevsJ+'/'+genderv+'/'+detailv1);
+var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+gradevsJ+'/'+genderv+'/'+detailv1);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -780,7 +832,11 @@ $("#DelGame").show();
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -797,7 +853,7 @@ $("#DelGame").show();
 	
 else if(depav=="Senior Highschool"){
 if (gamev=="Badminton"){
-var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+gradevsS+'/'+genderv+'/'+detailv1);
+var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+gradevsS+'/'+genderv+'/'+detailv1);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -830,7 +886,11 @@ $("#DelGame").show();
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -845,7 +905,7 @@ $("#DelGame").show();
 }	
 else if (gamev=="Athletics"){
 
-var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+gradevsS+'/'+genderv+'/'+detailv2);
+var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+gradevsS+'/'+genderv+'/'+detailv2);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -878,7 +938,11 @@ $("#DelGame").show();
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -892,7 +956,7 @@ $("#DelGame").show();
 });
 }
 else if (gamev=="Board Games"){
-var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+gradevsS+'/'+genderv+'/'+detailv3);
+var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+gradevsS+'/'+genderv+'/'+detailv3);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -925,7 +989,11 @@ $("#DelGame").show();
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -940,7 +1008,7 @@ $("#DelGame").show();
  
 }
 else if (gamev=="Basketball"){
-	var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+gradevsS+'/'+genderv);
+	var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+gradevsS+'/'+genderv);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -966,7 +1034,11 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -981,7 +1053,7 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 });
 }
 else if (gamev=="Volleyball"){
-	var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+gradevsS+'/'+genderv);
+	var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+gradevsS+'/'+genderv);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -1007,7 +1079,11 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -1023,7 +1099,7 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 	
 }
 else if(gamev=="Lawn Tennis") {
-var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+gradevsS+'/'+genderv+'/'+detailv1);
+var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+gradevsS+'/'+genderv+'/'+detailv1);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -1055,7 +1131,11 @@ $("#DelGame").show();
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -1071,7 +1151,7 @@ $("#DelGame").show();
 	
 }
 else if(gamev=="Table Tennis"){
-var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+gradevsS+'/'+genderv+'/'+detailv1);
+var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+gradevsS+'/'+genderv+'/'+detailv1);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -1103,7 +1183,11 @@ $("#DelGame").show();
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -1120,7 +1204,7 @@ $("#DelGame").show();
   
 else if(depav=="College"){
 	if (gamev=="Badminton"){
-var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+genderv+'/'+detailv1);
+var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+genderv+'/'+detailv1);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -1152,7 +1236,11 @@ $("#DelGame").show();
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -1166,7 +1254,7 @@ $("#DelGame").show();
 });
 }	
 else if (gamev=="Athletics"){
-var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+genderv+'/'+detailv2);
+var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+genderv+'/'+detailv2);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -1198,7 +1286,11 @@ $("#DelGame").show();
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -1212,7 +1304,7 @@ $("#DelGame").show();
 });
 }
 else if (gamev=="Board Games"){
-var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+genderv+'/'+detailv3);
+var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+genderv+'/'+detailv3);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -1246,7 +1338,11 @@ $("#DelGame").show();
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -1260,7 +1356,7 @@ $("#DelGame").show();
 });
 }
 else if (gamev=="Basketball"){
-	var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+genderv);
+	var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+genderv);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -1287,7 +1383,11 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -1302,7 +1402,7 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 });
 }
 else if (gamev=="Volleyball"){
-var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+genderv);
+var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+genderv);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -1329,7 +1429,11 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -1345,7 +1449,7 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 	
 }
 else if(gamev=="Lawn Tennis") {
-var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+genderv+'/'+detailv1);
+var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+genderv+'/'+detailv1);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -1378,7 +1482,11 @@ $("#DelGame").show();
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+	    var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -1392,7 +1500,7 @@ $("#DelGame").show();
 });
 }
 else if(gamev=="Table Tennis"){
-var firebaseHeadingRef = firebase.database().ref().child("Players/"+gamev+'/'+depav+'/'+genderv+'/'+detailv1);
+var firebaseHeadingRef = firebase.database().ref().child("Event/"+gamev+'/'+depav+'/'+genderv+'/'+detailv1);
 firebaseHeadingRef.on('value', function(datasnapshot){
 
 
@@ -1425,7 +1533,11 @@ $("#DelGame").show();
 		 var time = datasnapshot.child("Time").val();
 		  var win = datasnapshot.child("Win").val();
 		   var lose = datasnapshot.child("Lose").val();
-	  
+  var teamA = datasnapshot.child("TeamA").val();
+		   var teamB = datasnapshot.child("TeamB").val();
+
+		   document.getElementById("pteamA").value = teamA;
+		    document.getElementById("pteamB").value = teamB;	  
 
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
@@ -1460,10 +1572,12 @@ var v1 = x.elements["department"].value;
 	var grJ=x.elements["gjunior"].value;
 	var grS=x.elements["gsenior"].value;
 var accName = document.getElementById("options").value;
+	 var vteamA = document.getElementById("pteamA").value
+ var vteamB = document.getElementById("pteamB").value
 
 if(v1=="Elementary"){
 if (v3=="Badminton"){
-	var firebaseHeadingRef = firebase.database().ref().child("Players/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1);
+	var firebaseHeadingRef = firebase.database().ref().child("Event/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1);
 firebaseHeadingRef.on('value', function(datasnapshot){
 	
 	 var  official= datasnapshot.child("Official").val();
@@ -1482,10 +1596,13 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
+ 
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -1496,7 +1613,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -1510,7 +1629,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1).update({
 Official: accName,
 
 	
@@ -1526,10 +1645,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -1540,7 +1661,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
   }
@@ -1567,10 +1690,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x2+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x2).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -1581,7 +1706,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -1595,7 +1722,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x2).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x2).update({
 Official: accName,
 
 	
@@ -1611,10 +1738,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x2+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x2).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -1625,7 +1754,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
   }
@@ -1652,10 +1783,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x3+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x3).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -1666,7 +1799,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -1680,7 +1815,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x3).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x3).update({
 Official: accName,
 
 	
@@ -1696,10 +1831,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x3+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x3).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -1710,7 +1847,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
   }
@@ -1740,10 +1879,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+grE+'/'+v2).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -1754,7 +1895,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -1768,7 +1911,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+grE+'/'+v2).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+grE+'/'+v2).update({
 Official: accName,
 
 	
@@ -1784,10 +1927,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+grE+'/'+v2).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -1798,7 +1943,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
   }
@@ -1825,10 +1972,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+grE+'/'+v2).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -1839,7 +1988,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -1853,7 +2004,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+grE+'/'+v2).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+grE+'/'+v2).update({
 Official: accName,
 
 	
@@ -1869,10 +2020,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+grE+'/'+v2).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -1883,7 +2036,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
   }
@@ -1911,10 +2066,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -1925,7 +2082,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -1939,7 +2098,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1).update({
 Official: accName,
 
 	
@@ -1955,10 +2114,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -1969,7 +2130,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
   }
@@ -1997,10 +2160,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -2011,7 +2176,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -2025,7 +2192,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1).update({
 Official: accName,
 
 	
@@ -2041,10 +2208,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -2055,8 +2224,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
-	
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
   });
   }
 
@@ -2086,10 +2256,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -2100,7 +2272,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -2114,7 +2288,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1).update({
 Official: accName,
 
 	
@@ -2130,10 +2304,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -2144,7 +2320,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
   }
@@ -2171,10 +2349,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x2+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x2).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -2185,7 +2365,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -2199,7 +2381,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x2).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x2).update({
 Official: accName,
 
 	
@@ -2215,10 +2397,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x2+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x2).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -2229,7 +2413,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
   }
@@ -2256,10 +2442,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x3+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x3).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -2270,7 +2458,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -2284,7 +2474,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x3).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x3).update({
 Official: accName,
 
 	
@@ -2300,10 +2490,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x3+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x3).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -2314,7 +2506,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
   }
@@ -2342,10 +2536,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+grJ+'/'+v2).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -2356,7 +2552,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -2370,7 +2568,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+grJ+'/'+v2).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+grJ+'/'+v2).update({
 Official: accName,
 
 	
@@ -2386,10 +2584,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+grJ+'/'+v2).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -2400,7 +2600,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
   }
@@ -2427,10 +2629,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+grJ+'/'+v2).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -2441,7 +2645,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -2455,7 +2661,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+grJ+'/'+v2).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+grJ+'/'+v2).update({
 Official: accName,
 
 	
@@ -2471,10 +2677,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+grJ+'/'+v2).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -2485,7 +2693,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
   }
@@ -2513,10 +2723,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -2527,7 +2739,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -2541,7 +2755,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1).update({
 Official: accName,
 
 	
@@ -2557,10 +2771,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -2571,7 +2787,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
   }
@@ -2598,10 +2816,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -2612,7 +2832,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -2626,7 +2848,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1).update({
 Official: accName,
 
 	
@@ -2642,10 +2864,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -2656,7 +2880,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
   }
@@ -2686,10 +2912,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -2700,7 +2928,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -2714,7 +2944,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1).update({
 Official: accName,
 
 	
@@ -2730,10 +2960,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -2744,7 +2976,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
   }
@@ -2771,10 +3005,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x2+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x2).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -2785,7 +3021,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -2799,7 +3037,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x2).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x2).update({
 Official: accName,
 
 	
@@ -2815,10 +3053,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x2+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x2).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -2829,7 +3069,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
   }
@@ -2857,10 +3099,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x3+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x3).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -2871,7 +3115,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -2885,7 +3131,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x3).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x3).update({
 Official: accName,
 
 	
@@ -2901,10 +3147,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x3+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x3).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -2915,7 +3163,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
   }
@@ -2943,10 +3193,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+grS+'/'+v2).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -2957,7 +3209,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -2971,7 +3225,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+grS+'/'+v2).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+grS+'/'+v2).update({
 Official: accName,
 
 	
@@ -2987,10 +3241,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+grS+'/'+v2).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -3001,7 +3257,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
   }
@@ -3028,10 +3286,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+grS+'/'+v2).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -3042,7 +3302,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -3056,7 +3318,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+grS+'/'+v2).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+grS+'/'+v2).update({
 Official: accName,
 
 	
@@ -3072,10 +3334,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+grS+'/'+v2).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -3086,7 +3350,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
   }
@@ -3117,10 +3383,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -3131,7 +3399,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -3145,7 +3415,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1).update({
 Official: accName,
 
 	
@@ -3161,10 +3431,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -3175,7 +3447,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
   }
@@ -3203,10 +3477,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -3217,7 +3493,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -3231,7 +3509,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1).update({
 Official: accName,
 
 	
@@ -3247,10 +3525,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -3261,7 +3541,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
  });
   }
@@ -3292,10 +3574,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+v2+'/'+x1+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+v2+'/'+x1).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -3306,7 +3590,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -3320,7 +3606,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+v2+'/'+x1).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+v2+'/'+x1).update({
 Official: accName,
 
 	
@@ -3336,10 +3622,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+v2+'/'+x1+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+v2+'/'+x1).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -3350,7 +3638,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
   }
@@ -3377,10 +3667,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+v2+'/'+x2+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+v2+'/'+x2).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -3391,7 +3683,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -3405,7 +3699,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+v2+'/'+x2).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+v2+'/'+x2).update({
 Official: accName,
 
 	
@@ -3421,10 +3715,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+v2+'/'+x2+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+v2+'/'+x2).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -3435,7 +3731,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
   }
@@ -3462,10 +3760,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+v2+'/'+x3+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+v2+'/'+x3).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -3476,7 +3776,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -3490,7 +3792,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+v2+'/'+x3).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+v2+'/'+x3).update({
 Official: accName,
 
 	
@@ -3506,10 +3808,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+v2+'/'+x3+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+v2+'/'+x3).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -3520,7 +3824,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
   }
@@ -3547,10 +3853,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+v2+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+v2).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -3561,7 +3869,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -3575,7 +3885,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+v2).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+v2).update({
 Official: accName,
 
 	
@@ -3591,10 +3901,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+v2+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+v2).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -3605,7 +3917,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
   }
@@ -3633,10 +3947,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+v2+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+v2).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -3647,7 +3963,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -3661,7 +3979,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+v2).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+v2).update({
 Official: accName,
 
 	
@@ -3677,10 +3995,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+v2+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+v2).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -3691,7 +4011,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
   }
@@ -3718,10 +4040,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+v2+'/'+x1+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+v2+'/'+x1).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -3732,7 +4056,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -3746,7 +4072,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+v2+'/'+x1).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+v2+'/'+x1).update({
 Official: accName,
 
 	
@@ -3762,10 +4088,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+v2+'/'+x1+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+v2+'/'+x1).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -3776,7 +4104,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
   }
@@ -3803,10 +4133,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-	 ref.child("Schedule/"+v3+'/'+v1+'/'+v2+'/'+x1+'/'+v5).update({
+	 ref.child("Event/"+v3+'/'+v1+'/'+v2+'/'+x1).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -3817,7 +4149,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
  
@@ -3831,7 +4165,7 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
- ref.child("Players/"+v3+'/'+v1+'/'+v2+'/'+x1).update({
+ ref.child("Event/"+v3+'/'+v1+'/'+v2+'/'+x1).update({
 Official: accName,
 
 	
@@ -3847,10 +4181,12 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
-  ref.child("Schedule/"+v3+'/'+v1+'/'+v2+'/'+x1+'/'+v5).update({
+  ref.child("Event/"+v3+'/'+v1+'/'+v2+'/'+x1).update({
 Official: accName,
 	Game: v3,
 Department: v1,
@@ -3861,7 +4197,9 @@ Department: v1,
  Day: v5,
  Time: v6,
  Win:y1,
- Lose: y2
+ Lose: y2,
+ TeamA: vteamA,
+	TeamB: vteamB,
 	
   });
   }
@@ -3907,7 +4245,7 @@ var v1 = x.elements["department"].value;
 	var grE=x.elements["gelem"].value;
 	var grJ=x.elements["gjunior"].value;
 	var grS=x.elements["gsenior"].value;
-var accName = document.getElementById("options").value;
+var official = document.getElementById("options").value;
 	
 	if (v1 == "Elementary"){
 		if (v3 == "Badminton")
@@ -3920,7 +4258,7 @@ alert("Game Deleted");
 	
 	alert("Failed!");
 })
-var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1+'/'+v5);
+var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -3938,7 +4276,7 @@ alert("Game Deleted");
 	alert("Failed!");
 })
 
-	var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x2+'/'+v5);
+	var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x2);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -3955,7 +4293,7 @@ alert("Game Deleted");
 	
 	alert("Failed!");
 })
-			var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x3+'/'+v5);
+			var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x3);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -3976,7 +4314,7 @@ alert("Game Deleted");
 	alert("Failed!");
 })
 
-var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+grE+'/'+v2+'/'+v5);
+var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+grE+'/'+v2);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -3995,7 +4333,7 @@ alert("Game Deleted");
 	alert("Failed!");
 })
 
-var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+grE+'/'+v2+'/'+v5);
+var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+grE+'/'+v2);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -4013,7 +4351,7 @@ alert("Game Deleted");
 	alert("Failed!");
 })
 
-var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1+'/'+v5);
+var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -4031,7 +4369,7 @@ alert("Game Deleted");
 	alert("Failed!");
 })
 
-var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1+'/'+v5);
+var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -4053,7 +4391,7 @@ alert("Game Deleted");
 	alert("Failed!");
 })
 
-var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1+'/'+v5);
+var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -4070,7 +4408,7 @@ alert("Game Deleted");
 	
 	alert("Failed!");
 })
-			var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x2+'/'+v5);
+			var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x2);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -4088,7 +4426,7 @@ alert("Game Deleted");
 	alert("Failed!");
 })
 
-var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x3+'/'+v5);
+var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x3);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -4107,7 +4445,7 @@ alert("Game Deleted");
 	alert("Failed!");
 })
 
-var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+v5);
+var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+grJ+'/'+v2);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -4124,7 +4462,7 @@ alert("Game Deleted");
 	
 	alert("Failed!");
 })
-var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+v5);
+var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+grJ+'/'+v2);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -4141,7 +4479,7 @@ alert("Game Deleted");
 	
 	alert("Failed!");
 })
-var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1+'/'+v5);
+var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -4160,7 +4498,7 @@ alert("Game Deleted");
 	alert("Failed!");
 })
 
-var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1+'/'+v5);
+var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -4183,7 +4521,7 @@ alert("Game Deleted");
 	alert("Failed!");
 })
 
-var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1+'/'+v5);
+var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -4200,7 +4538,7 @@ alert("Game Deleted");
 	
 	alert("Failed!");
 })
-			var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x2+'/'+v5);
+			var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x2);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -4217,7 +4555,7 @@ alert("Game Deleted");
 	
 	alert("Failed!");
 })
-			var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x3+'/'+v5);
+			var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x3);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -4235,7 +4573,7 @@ alert("Game Deleted");
 	
 	alert("Failed!");
 })
-var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+grS+'/'+v2+'/'+v5);
+var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+grS+'/'+v2);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -4253,7 +4591,7 @@ alert("Game Deleted");
 	
 	alert("Failed!");
 })
-var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+grS+'/'+v2+'/'+v5);
+var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+grS+'/'+v2);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -4272,7 +4610,7 @@ alert("Game Deleted");
 	alert("Failed!");
 })
 
-var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1+'/'+v5);
+var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -4290,7 +4628,7 @@ alert("Game Deleted");
 	
 	alert("Failed!");
 })
-var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1+'/'+v5);
+var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -4312,7 +4650,7 @@ alert("Game Deleted");
 	
 	alert("Failed!");
 })
-var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+v2+'/'+x1+'/'+v5);
+var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+v2+'/'+x1);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -4330,7 +4668,7 @@ alert("Game Deleted");
 	
 	alert("Failed!");
 })
-			var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+v2+'/'+x2+'/'+v5);
+			var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+v2+'/'+x2);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -4348,7 +4686,7 @@ alert("Game Deleted");
 	
 	alert("Failed!");
 })
-			var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+v2+'/'+x3+'/'+v5);
+			var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+v2+'/'+x3);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -4367,7 +4705,7 @@ alert("Game Deleted");
 	
 	alert("Failed!");
 })
-var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+v2+'/'+v5);
+var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+v2);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -4386,7 +4724,7 @@ alert("Game Deleted");
 	
 	alert("Failed!");
 })
-var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+v2+'/'+v5);
+var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+v2);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -4403,7 +4741,7 @@ alert("Game Deleted");
 	
 	alert("Failed!");
 })
-var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+v2+'/'+x1+'/'+v5);
+var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+v2+'/'+x1);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
@@ -4422,7 +4760,7 @@ alert("Game Deleted");
 	console.log("Remove Failed: " + error.message);
 	alert("Failed!");
 })
-var firebaseRef = firebase.database().ref('Schedule/'+v3+'/'+v1+'/'+v2+'/'+x1+'/'+v5);
+var firebaseRef = firebase.database().ref('Event/'+v3+'/'+v1+'/'+v2+'/'+x1);
 	  firebaseRef.remove().then(function() { 
 console.log("Remove succeeded.");
 }).catch(function (error) {
