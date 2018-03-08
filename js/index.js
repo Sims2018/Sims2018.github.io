@@ -494,7 +494,7 @@ Department: v1,
 ref.set(data); 
 
 
-var time = database.ref("Event/"+'/'+v1+'/'+grE+'/'+v2+'/'+x1);
+var time = database.ref("Event/"+v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1);
 var data= {
 	Official: accName,
 		Game: v3,
