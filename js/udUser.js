@@ -231,6 +231,20 @@ ref.child("Officials/"+Oname).update({
 	});
 	
 
+	
+else{
+	
+	
+var ref = database.ref();
+	
+ref.child("Officials/"+Oname).update({
+  Email: Email,
+  Name: Oname,
+  Password: Pass
+	
+	});
+	
+
 		var firebaseRef = firebase.database().ref("Officials/"+options);
 
 firebaseRef.remove().then(function() { 
@@ -238,7 +252,8 @@ console.log("Remove succeeded.");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
-
+	
+}
 alert("Official was successfully updated");
 }
 	
