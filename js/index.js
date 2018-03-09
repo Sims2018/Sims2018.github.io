@@ -1763,6 +1763,9 @@ time.set(data);
 	
 }
 	
+
+  
+} 
 var firebaseRef = firebase.database().ref();
 	var firebaseHeadingRef = firebase.database().ref().child("TotalGames:");
 firebaseHeadingRef.once('value', function(datasnapshot){
@@ -1786,8 +1789,6 @@ $("#boardGames").hide();
 $("#hide").hide();
 $("#offi").hide();
 alert('Games Created!!')
-  
-} 
 }
   
 
