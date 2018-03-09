@@ -13,7 +13,7 @@ $("#gelem").show();
 $("#gjunior").hide();
 $("#gsenior").hide();
 $("#offi").hide();
-	
+	var database = firebase.database();
 	
 	var x=document.getElementById("form");
 
