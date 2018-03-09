@@ -104,6 +104,72 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 				}
 window.onload = onLoadFunctions;
 
+$("#loginBtn").click(
+  function(){
+
+ 
+  
+  var email = $("#loginEmail").val();
+    var password = $("#loginPassword").val();
+
+    if(email != "" && password != ""){
+		var firebaseHeadingRef = firebase.database().ref().child("Admin");
+firebaseHeadingRef.on('value', function(datasnapshot){
+ 
+	
+   var names = datasnapshot.child("Name").val();
+  var emails = datasnapshot.child("Email").val();
+  var passs = datasnapshot.child("Password").val();
+  
+
+
+     if (email == names && password == passs)
+	 {
+	   var ref = database.ref();
+
+	  ref.child("Admin").update({
+Status: "Login",
+
+	
+  });
+  
+   $("#cover").hide();
+
+ var dialogos = document.querySelector('#loginDialog');
+   
+    dialogos.close();
+
+        
+    
+}
+     else
+	 {alert("Wrong password or email!")
+		 
+	 }
+     });
+    }
+  else
+  {
+	  alert("Empty Fields")
+  }
+});
+
+
+/* LOGOUT PROCESS */
+
+$("#signout").click(
+  function(){
+
+  var ref = database.ref();
+
+	  ref.child("Admin").update({
+Status: "Logout",
+
+	
+  });
+  
+   });
+   
 $(document).on('change',"#options", function() {
 		
 var options = document.getElementById("options").value;
