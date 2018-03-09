@@ -296,7 +296,7 @@ alert("Official "+options+" was removed");
 	console.log("Remove Failed: " + error.message);
 })
 
-alert('Official Deleteed!')
+
 location.reload();
 });
 
