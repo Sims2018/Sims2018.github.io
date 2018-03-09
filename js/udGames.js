@@ -57,6 +57,69 @@ $("#options").append(o);
 	
 }
 window.onload = onLoadFunctions;
+
+$("#loginBtn").click(
+  function(){
+
+ 
+  
+  var email = $("#loginEmail").val();
+    var password = $("#loginPassword").val();
+
+    if(email != "" && password != ""){
+		var firebaseHeadingRef = firebase.database().ref().child("Admin");
+firebaseHeadingRef.on('value', function(datasnapshot){
+ 
+	
+   var names = datasnapshot.child("Name").val();
+  var emails = datasnapshot.child("Email").val();
+  var passs = datasnapshot.child("Password").val();
+  
+
+
+     if (email == names && password == passs)
+	 {
+	   var ref = database.ref();
+
+	  ref.child("Admin").update({
+Status: "Login",
+
+	
+  });
+  
+   $("#cover").hide();
+
+ var dialogos = document.querySelector('#loginDialog');
+   
+    dialogos.close();
+
+        
+    
+}
+     else
+	 {alert("Wrong password or email!")
+		 
+	 }
+     });
+    }
+  else
+  {
+	  alert("Empty Fields")
+  }
+});
+
+$("#signout").click(
+  function(){
+
+  var ref = database.ref();
+
+	  ref.child("Admin").update({
+Status: "Logout",
+
+	
+  });
+  
+   });
 $(document).on('change',"#game", function() { 
 	var v1 = x.elements["game"].value;
 	if (v1 == "Badminton")
@@ -187,7 +250,7 @@ $("#DelGame").show();
    firebaseHeadingRefs.on('value', function(datasnapshot){
 
 	 
-	  
+	   
 	   var venue = datasnapshot.child("Venue").val();
 	    var day = datasnapshot.child("Day").val();
 		 var time = datasnapshot.child("Time").val();
@@ -195,7 +258,11 @@ $("#DelGame").show();
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
     document.getElementById("options").value = official;
@@ -204,7 +271,7 @@ $("#DelGame").show();
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
-			   
+}
 	   
 	   });
   }
@@ -240,16 +307,21 @@ firebaseHeadingRefs.on('value', function(datasnapshot){
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
+		   var plstat = datasnapshot.child("Status").val();
 
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
-
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
+}
   });
   }
 });
@@ -287,16 +359,20 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+	var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
-
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
+}
 });
   }
 });
@@ -333,16 +409,20 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
-
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
+}
 			
 });
   }
@@ -379,16 +459,20 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
-
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
+}
 			
 });
   }
@@ -432,17 +516,20 @@ $("#DelGame").show();
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
-
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
-	   
+}
 	   });
   }
 });
@@ -485,17 +572,20 @@ $("#DelGame").show();
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
-
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
-	   
+}
 	   });
   }
 });
@@ -539,17 +629,20 @@ $("#DelGame").show();
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
-
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
-	   
+}
 	   });
   }
 });
@@ -589,17 +682,20 @@ $("#DelGame").show();
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
-
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
-	   
+}
 	   });
   }
 });
@@ -640,17 +736,20 @@ $("#DelGame").show();
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
-
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
-	   
+}
 	   });
   }
 });
@@ -686,16 +785,20 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
-
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
+}
 			
 });
   }
@@ -731,17 +834,20 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
-
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
-			
+}
 });
   }
 	
@@ -783,17 +889,20 @@ $("#DelGame").show();
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
-
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
-	   
+}
 	   });
   }
 });
@@ -834,17 +943,20 @@ $("#DelGame").show();
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
-
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
-	   
+}
 	   });
   }
 });
@@ -888,17 +1000,20 @@ $("#DelGame").show();
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
-
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
-	   
+}
 	   });
   }
 });
@@ -940,17 +1055,20 @@ $("#DelGame").show();
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
-
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
-	   
+}
 	   });
   }
 });
@@ -991,17 +1109,20 @@ $("#DelGame").show();
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
-
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
-	   
+}
 	   });
   }
 });
@@ -1036,17 +1157,20 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
-
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
-			
+}
 });
   }
 	
@@ -1081,17 +1205,20 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
-
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
-			
+}
 });
   }
 	
@@ -1133,17 +1260,20 @@ $("#DelGame").show();
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
-
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
-	   
+}
 	   });
   }
 });
@@ -1185,17 +1315,20 @@ $("#DelGame").show();
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
-
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
-	   
+}
 	   });
   }
 });
@@ -1238,17 +1371,20 @@ $("#DelGame").show();
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
-
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
-	   
+}
 	   });
   }
 });
@@ -1288,17 +1424,20 @@ $("#DelGame").show();
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
-
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
-	   
+}
 	   });
   }
 });
@@ -1340,17 +1479,20 @@ $("#DelGame").show();
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
-
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
-	   
+}
 	   });
   }
 });
@@ -1385,17 +1527,20 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
-
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
-			
+}
 });
   }
 	
@@ -1431,17 +1576,20 @@ firebaseHeadingRef.on('value', function(datasnapshot){
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
-
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
-			
+}
 });
   }
 	
@@ -1484,17 +1632,20 @@ $("#DelGame").show();
 		   var lose = datasnapshot.child("Lose").val();
 	    var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
 		    document.getElementById("pteamB").value = teamB;
-
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
-	   
+}
 	   });
   }
 });
@@ -1535,17 +1686,20 @@ $("#DelGame").show();
 		   var lose = datasnapshot.child("Lose").val();
   var teamA = datasnapshot.child("TeamA").val();
 		   var teamB = datasnapshot.child("TeamB").val();
-
+var plstat = datasnapshot.child("Status").val();
+if (plstat == "Played")
+{              alert ('You cant update or delete this game because it is already played!');               }
+else
+{
 		   document.getElementById("pteamA").value = teamA;
-		    document.getElementById("pteamB").value = teamB;	  
-
+		    document.getElementById("pteamB").value = teamB;
     document.getElementById("options").value = official;
 	    document.getElementById("venue").value = venue;
 		 document.getElementById("sched").value = day;
 		  document.getElementById("time").value = time;
 		   document.getElementById("winp").value = win;
 		    document.getElementById("losep").value = lose;
-	   
+}
 	   });
   }
 });
@@ -4211,7 +4365,7 @@ Department: v1,
 
 
 
-
+alert('The game was successfully updated!')
 $("#label").hide();
 
 
@@ -4248,6 +4402,21 @@ var v1 = x.elements["department"].value;
 var official = document.getElementById("options").value;
 	
 	if (v1 == "Elementary"){
+		var firebaseRef = firebase.database().ref();
+	var firebaseHeadingRef = firebase.database().ref().child("TotalGamesE:");
+firebaseHeadingRef.once('value', function(datasnapshot){
+var y = datasnapshot.val();
+var a = parseInt(y)	;
+
+
+
+var ans=a-1;
+
+var n = ans.toString();
+
+firebaseRef.child("TotalGamesE:").set(n);
+
+});
 		if (v3 == "Badminton")
 		{
 			var firebaseRef = firebase.database().ref(v3+'/'+v1+'/'+grE+'/'+v2+'/'+x1+'/'+official);
@@ -4380,7 +4549,23 @@ console.log("Remove succeeded.");
 	}
 	
 else if (v1 == "Junior Highschool")
-	{if (v3 == "Badminton")
+	{
+		var firebaseRef = firebase.database().ref();
+	var firebaseHeadingRef = firebase.database().ref().child("TotalGamesJ:");
+firebaseHeadingRef.once('value', function(datasnapshot){
+var y = datasnapshot.val();
+var a = parseInt(y)	;
+
+
+
+var ans=a+1;
+
+var n = ans.toString();
+
+firebaseRef.child("TotalGamesJ:").set(n);
+
+});
+		if (v3 == "Badminton")
 		{
 			var firebaseRef = firebase.database().ref(v3+'/'+v1+'/'+grJ+'/'+v2+'/'+x1+'/'+official);
 	  firebaseRef.remove().then(function() { 
@@ -4510,7 +4695,23 @@ console.log("Remove succeeded.");
 	}
 	
 else if (v1 == "Senior Highschool")
-	{if (v3 == "Badminton")
+	{	var firebaseRef = firebase.database().ref();
+	var firebaseHeadingRef = firebase.database().ref().child("TotalGamesS:");
+firebaseHeadingRef.once('value', function(datasnapshot){
+var y = datasnapshot.val();
+var a = parseInt(y)	;
+
+
+
+var ans=a-1;
+
+var n = ans.toString();
+
+firebaseRef.child("TotalGamesS:").set(n);
+
+});
+		
+		if (v3 == "Badminton")
 		{
 			var firebaseRef = firebase.database().ref(v3+'/'+v1+'/'+grS+'/'+v2+'/'+x1+'/'+official);
 	  firebaseRef.remove().then(function() { 
@@ -4639,7 +4840,22 @@ console.log("Remove succeeded.");
 	}
 	
 	else if (v1 == "College")
-	{if (v3 == "Badminton")
+	{	var firebaseRef = firebase.database().ref();
+	var firebaseHeadingRef = firebase.database().ref().child("TotalGamesC:");
+firebaseHeadingRef.once('value', function(datasnapshot){
+var y = datasnapshot.val();
+var a = parseInt(y)	;
+
+
+
+var ans=a-1;
+
+var n = ans.toString();
+
+firebaseRef.child("TotalGamesC:").set(n);
+
+});
+		if (v3 == "Badminton")
 		{
 			var firebaseRef = firebase.database().ref(v3+'/'+v1+'/'+v2+'/'+x1+'/'+official);
 	  firebaseRef.remove().then(function() { 
@@ -4768,7 +4984,22 @@ console.log("Remove succeeded.");
 })
 		}
 	}
-	
+		var firebaseRef = firebase.database().ref();
+	var firebaseHeadingRef = firebase.database().ref().child("TotalGames:");
+firebaseHeadingRef.once('value', function(datasnapshot){
+var y = datasnapshot.val();
+var a = parseInt(y)	;
+
+
+
+var ans=a-1;
+
+var n = ans.toString();
+
+firebaseRef.child("TotalGames:").set(n);
+
+});
+alert('Game Deleted!');
 });
 
 

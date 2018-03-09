@@ -101,10 +101,7 @@ Status: "Logout",
 	
   });
   
-  }
-
-
-);
+   });
 
 var firebaseHeadingRef = firebase.database().ref().child("Team A:");
 firebaseHeadingRef.on('value', function(datasnapshot){
