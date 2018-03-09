@@ -1792,6 +1792,7 @@ $("#athletics1").hide();
 $("#boardGames").hide();
 $("#hide").hide();
 $("#offi").hide();
+alert('Games Created!!')
 } 
 
 
