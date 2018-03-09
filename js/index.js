@@ -13,7 +13,7 @@ $("#gelem").show();
 $("#gjunior").hide();
 $("#gsenior").hide();
 $("#offi").hide();
-	var database = firebase.database();
+	
 	
 	var x=document.getElementById("form");
 
@@ -102,17 +102,9 @@ Status: "Login",
   {
 	  alert("Empty Fields")
   }
-});
-$("#signout").click(
-  function(){
 
-  var ref = database.ref();
+  
 
-	  ref.child("Admin").update({
-Status: "Logout",
-
-	
-  });
   
    });
 
@@ -1767,8 +1759,9 @@ Official: accName,
 time.set(data); 
   }
   });
+
+	
 }
-	} 
 	
 var firebaseRef = firebase.database().ref();
 	var firebaseHeadingRef = firebase.database().ref().child("TotalGames:");
@@ -1793,8 +1786,10 @@ $("#boardGames").hide();
 $("#hide").hide();
 $("#offi").hide();
 alert('Games Created!!')
+  
 } 
-
+}
+  
 
 $("#signout").click(
   function(){
@@ -1807,7 +1802,7 @@ Status: "Logout",
 	
   });
   
-  }
+  });
 
 
-);
+  
