@@ -220,7 +220,7 @@ var database = firebase.database();
 if (User=="Official")
 {
 
-	
+if (options == Oname) 	{
 var ref = database.ref();
 	
 ref.child("Officials/"+Oname).update({
@@ -229,10 +229,8 @@ ref.child("Officials/"+Oname).update({
   Password: Pass
 	
 	});
-	
-
-	
-else{
+}
+	else{
 	
 	
 var ref = database.ref();
@@ -256,6 +254,11 @@ console.log("Remove succeeded.");
 }
 alert("Official was successfully updated");
 }
+	
+
+	
+
+
 	
 else if (User=="Admin")
 {
@@ -292,6 +295,8 @@ alert("Official "+options+" was removed");
 }).catch(function (error) {
 	console.log("Remove Failed: " + error.message);
 })
+
+alert('Official Deleteed!')
 location.reload();
 });
 
